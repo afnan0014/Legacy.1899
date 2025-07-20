@@ -1,0 +1,1187 @@
+@font-face {
+  font-family: 'SpecialElite'; /* You can name it anything */
+  src: url('../fonts/SpecialElite.ttf') format('truetype'); /* Adjust path */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HVD_Poster'; /* You can name it anything */
+  src: url('../fonts/HVD_Poster.ttf') format('truetype'); /* Adjust path */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TobagoPoster'; /* You can name it anything */
+  src: url('../fonts/TobagoPoster.ttf') format('truetype'); /* Adjust path */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'IBM Plex Mono', monospace;
+  background-color: #001f3f;
+  color: #FFD700;
+}
+
+.text-blue {
+  color: #03468d; /* Barça blue */
+}
+
+.text-red {
+  color: #b30024; /* Barça red */
+}
+
+
+
+.H2-heading {
+  font-family: 'HVD_Poster', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 5rem); /* Responsive between 2.5rem and 6rem */
+  letter-spacing: 4px;
+  color: #FFD700;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  /* Animation default state */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* When in viewport, animate */
+.H2-heading.animate-in {
+  animation: fadeSlideUp 1s ease forwards;
+}
+/* ========== Responsive Fix for Section Headings ========== */
+@media (max-width: 768px) {
+  .H2-heading {
+    font-size: clamp(2.5rem, 6vw, 3rem);/* Adjusted for mobile */
+    padding: 0 1rem;
+    line-height: 1.2;
+  }
+}
+
+
+/* ========== Section Heading Animation ========== */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+   Header Styles
+=========================== */
+
+.site-header {
+  background-color: #002147;
+  color: #FFD700;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Container inside the header */
+.header-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Logo */
+.barca-logo {
+  height: 60px;
+  margin-top: -5px;
+}
+
+/* Title next to logo */
+.site-title {
+  font-family: 'TobagoPoster', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #FFD700;
+  margin: 0;
+}
+
+/* Navbar base styles */
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+/* Nav list */
+.navbar-nav {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #FFD700;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background-color: #FFD700;
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-toggler {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' fill='%23FFD700' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='%23FFD700' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ===========================
+   Mobile Animations & Transitions
+=========================== */
+@media (max-width: 768px) {
+  .site-header {
+    position: relative;
+    z-index: 1000;
+  }
+
+  .header-container {
+    position: relative;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 1.2rem;
+  }
+
+  .logo-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .barca-logo {
+    width: 60px;
+    height: auto;
+  }
+
+  .site-title {
+    font-size: 1.7rem;
+    white-space: nowrap;
+    margin: 0;
+    word-spacing: 2px;
+    color: #FFD700;
+  }
+
+  /* Custom Hamburger Button */
+  .navbar-toggler {
+    position: absolute;
+    top: -0.7rem; /* Correct position - do not change */
+    right: 1.2rem;
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 0.4rem;
+    z-index: 1002; /* Make sure it sits above navbar-collapse */
+    background-color: #1f1e1cff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  .custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23FFD700' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    display: block;
+  }
+
+  /* Collapse menu panel */
+  .navbar {
+    width: 100%;
+  }
+
+  .navbar-collapse {
+    width: 100%;
+    background-color: #002147;
+    padding: 4rem 1.5rem 1rem 1.5rem; /* Add padding-top to prevent overlap */
+    border-radius: 0 0 12px 12px;
+    margin-top: 0.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+  }
+
+  .navbar-collapse.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-link {
+    color: #FFD700 !important;
+    font-weight: 600;
+    padding: 0.3rem 0;
+    text-align: left;
+  }
+
+  .navbar-nav li {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .collapse.show .navbar-nav li {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.1s;
+  }
+}
+
+/* ===========================
+   Force Show on Large Screens
+=========================== */
+@media (min-width: 769px) {
+  .collapse.navbar-collapse {
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+
+  .navbar-nav li {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+/*=============================*/
+/* Hero Section */
+/*=============================*/
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-fade-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 150px; /* control the size of the fade */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #001f3f 100%);
+  z-index: 1;
+}
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  padding: 2rem 1rem;
+  max-width: 90vw;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 12px;
+}
+
+.poster-heading {
+  font-size: clamp(3.6rem, 8vw, 8rem);
+  font-family:'TobagoPoster', sans-serif;
+  color: #FFD700;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0);
+}
+.typewriter1 {
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  font-weight: 500;
+  font-family:'SpecialElite', sans-serif;
+  color: #FFD700;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  max-width: 90%;
+  margin: 1rem auto 0;
+  line-height: 1.5;
+}
+/* Optional Fade Bottom */
+.hero-fade-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to top, #001f3f 0%, transparent 100%);
+  z-index: 2;
+}
+
+/* Small Screen Tweaks */
+@media (max-width: 768px) {
+  .hero-fade-bottom {
+    height: 50px;
+  }
+  .hero-section {
+    height: 70vh; /* Adjust height for smaller screens */
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/*=============================*/
+/* orgins Section */
+/*=============================*/
+
+
+.origins-section {
+  background-image: url('../images/1899_1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4rem 1rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10px;
+  z-index: 1;
+  
+}
+
+
+.origins-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 700px;
+}
+
+.news-frame {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0;
+  transform: translateY(50px) rotate(-70deg); /* 👈 small tilt */
+  transition: transform 0.6s ease, box-shadow 0.3s ease, opacity 0.6s ease;
+  cursor: pointer;
+}
+
+
+
+@keyframes throwIn {
+  0% {
+    transform: translateY(-200px) rotate(-20deg) scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(20px) rotate(5deg) scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+.news-frame:hover {
+  transform: scale(1.03) rotate(1deg);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0);
+}
+
+
+.news-frame.animate-in {
+  animation: throwIn 1.3s ease-out forwards;
+  opacity: 1;
+}
+/*=============================*/
+/* crest slider Section */
+/*=============================*/
+.slider-section {
+  background: linear-gradient(to bottom, #001f3f, #680000);
+  overflow: hidden;
+}
+
+.slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1550px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  will-change: transform;
+}
+
+.slider-item {
+  min-width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  padding: 0 10px;
+}
+
+.slider-item:hover {
+  transform: scale(1.03);
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #FFD700;
+  border: none;
+  font-size: 2rem;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  z-index: 2;
+  color: #001f3f;
+  border-radius: 4px;
+}
+
+.slider-arrow.left {
+  left: 10px;
+}
+
+.slider-arrow.right {
+  right: 10px;
+}
+/* Crest Animation */
+.slider-item {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.6s ease-in-out;
+}
+
+.slider-item.animate-in {
+  opacity: 1;
+  transform: scale(1);
+}
+.slider-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  will-change: transform;
+  width: 100%; /* already present */
+}
+
+.slider-item {
+  flex: 0 0 100%; /* ensures full width slide for each item */
+}
+@media (max-width: 768px) {
+  .slider-arrow {
+    display: none; /* Hide arrows */
+  }
+
+  .slider-item {
+    padding: 0;
+    max-width: 170%;
+    width: 140%;
+    transform: scale(2.6); /* Slightly enlarge crest */
+  }
+
+  .slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+
+  .dot.active {
+    background-color: #FFD700;
+  }
+}
+
+
+/*===========================================================*/
+/* Legacy Wall - Frame Card Styles (Desktop + Mobile)       */
+/*===========================================================*/
+
+.legacy-wall {
+  background-color: #680000;
+  padding: 4rem 1rem;
+  color: #FFD700;
+  text-align: center;
+  overflow: visible;
+}
+
+/* Grid for larger screens */
+.frame-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 9rem;
+}
+
+/* Frame Card */
+.frame-card {
+  position: relative;
+  width: 230px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  flex: 0 0 auto;
+  overflow: hidden;
+
+  /* Scroll reveal animation */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-in-out;
+}
+.frame-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.frame-card:hover {
+  transform: scale(1.05);
+}
+
+/* Frame + Image Container */
+.frame-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+}
+
+/* Frame Border */
+.frame-border {
+  width: 100%;
+  display: block;
+  z-index: 2;
+  position: relative;
+}
+
+/* Player Photo with Shimmer Hover */
+.player-photo {
+  position: absolute;
+  top: 12%;
+  left: 14%;
+  width: 72%;
+  height: 75%;
+  object-fit: cover;
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Shimmer Light Sweep Effect */
+.player-photo::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
+  transform: rotate(25deg) translate(-100%, -100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.frame-card:hover .player-photo::after {
+  animation: shine 1s ease-in-out forwards;
+}
+
+@keyframes shine {
+  0% {
+    transform: rotate(25deg) translate(-100%, -100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(25deg) translate(100%, 100%);
+    opacity: 0;
+  }
+}
+
+/* Caption Below Each Frame */
+.caption {
+  margin-top: 0.75rem;
+  font-family: 'SpecialElite', sans-serif;
+  font-size: 1rem;
+  color: #FFD700;
+}
+
+/*===========================================================*/
+/* 📱 Mobile Slider Styles                                   */
+/*===========================================================*/
+
+.mobile-slider {
+  position: relative;
+  overflow: hidden;
+  padding-top: 2rem;
+}
+
+.slide-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.mobile-slide {
+  min-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.mobile-slide .frame-card {
+  flex: 0 0 45%;
+}
+
+/* Navigation Arrows */
+.nav {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background-color: #FFD700;
+  color: #001f3f;
+  border: none;
+  font-size: 1.8rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 9%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.nav.left {
+  left: 10px;
+}
+
+.nav.right {
+  right: 10px;
+}
+
+/* Pagination Dots */
+.dot-nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #FFD700;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.dot.active {
+  opacity: 1;
+}
+.lottie-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.mobile-slider {
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none !important;
+  }
+}
+
+
+/* 🌟 Iconic Moments Section */
+.iconic-moments {
+  background: linear-gradient(to bottom, #680000, #001f3f);
+  padding: 5rem 1rem;
+  color: #FFD700;
+  text-align: center;
+  overflow: visible;
+}
+
+.iconic-title {
+  font-size: 6rem;
+  font-family: 'HVD_Poster', sans-serif;
+  margin-bottom: 5rem;
+}
+
+/* Layout */
+.moment-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Left and Right Sides */
+.moment-side {
+  flex: 1 1 300px;
+  text-align: justify;
+}
+
+.moment-img {
+  max-width: 120%;
+  height: auto;
+  animation: slideInLeft 1.5s ease forwards;
+}
+
+.moment-side.moment-left {
+  position: relative;
+}
+
+.moment-character {
+  position: absolute;
+  top: -420px;  /* adjust this value as needed */
+  left: 0;
+  width: 100%;  /* or set a specific width if needed */
+  z-index: 2;
+}
+
+
+
+/* TV Center */
+.moment-center {
+  flex: 1 1 400px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.tv-frame {
+  position: relative;
+  width: 620px;
+}
+
+.tv-img {
+  width: 100%;
+  z-index: 2;
+  position: relative;
+}
+
+.tv-screen-content {
+  position: absolute;
+  top: 10%;
+  left: 6%;
+  width: 78%;
+  height: 69%;
+  object-fit: cover;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+/* Description */
+.moment-heading {
+  font-family: 'TobagoPoster', sans-serif;
+  font-size: 2.1rem;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.moment-description {
+  font-size: 1rem;
+  font-family: 'TobagoPoster', sans-serif;
+  max-width: 350px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+
+
+/* 🎬 Animations */
+/* 🎞️ Updated Animations */
+@keyframes zoomSlideLeft {
+  0% {
+    transform: scale(0.8) translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomFadeIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🌟 Apply These New Classes */
+.zoom-slide-left {
+  animation: zoomSlideLeft 1.2s ease forwards;
+}
+
+.zoom-fade-in {
+  animation: zoomFadeIn 1.2s ease forwards;
+}
+
+.fade-in-up {
+  animation: fadeInUp 1.4s ease forwards;
+}
+.moment-slider {
+  position: relative;
+  max-width: 100%;
+}
+
+.moment-slide {
+  display: none;
+  animation: fadeSlide 1s ease-in-out;
+}
+
+.moment-slide.active {
+  display: block;
+}
+
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Character (Pep/Pique) image animation */
+.moment-character {
+  animation: slideInCharacter 1s ease-in-out;
+}
+
+@keyframes slideInCharacter {
+  0% { transform: translateX(-150px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+.moment-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  gap: 2rem;
+}
+
+.moment-nav button {
+  background: none;
+  border: 2px solid #FFD700;
+  color: #FFD700;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.moment-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #FFD700;
+  border-radius: 50%;
+  opacity: 0.4;
+  transition: 0.3s;
+}
+
+.dot.active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+.moment-heading{
+  transition: opacity 0.5s ease-in-out;
+}
+/* Description transition */
+.moment-description {
+  transition: opacity 0.5s ease-in-out;
+}
+.hidden {
+  display: none;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+.slide-out-left {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.slide-in-left {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+
+/* Hide character PNGs on screens smaller than 768px */
+@media (max-width: 767px) {
+  .moment-character {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .tv-frame {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .tv-screen-content {
+    top: 11%;
+    left: 7%;
+    width: 86%;
+    height: 68%;
+  }
+
+  .moment-description {
+    max-width: 90%;
+    font-size: 0.95rem;
+  }
+
+  .moment-heading {
+    font-size: 1.6rem;
+  }
+
+  .moment-slider {
+    padding: 0 1rem;
+  }
+
+  .moment-side {
+    text-align: center;
+  }
+}
+
+
+/* Footer */
+.site-footer {
+  background-color: #002147;
+  color: #FFD700;
+  padding: 3rem 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.footer-section h3 {
+  color: #FFD700;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-family: 'HVD_Poster' ,sans-serif;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li a {
+  color: #FFD700;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.social-icons a {
+  color: #FFD700;
+  font-size: 1.4rem;
+  margin-right: 1rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+/* 🔹 Navbar underline on hover */
+.nav-underline {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.nav-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #FFD700; /* Yellow underline */
+  transition: width 0.4s ease-in-out;
+}
+
+.nav-underline:hover::after {
+  width: 100%;
+}
+
+/* 🔹 Custom hamburger toggler icon */
+.custom-toggler {
+  background-color: #FFD700; /* Yellow background */
+  border: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+}
+
+/* Bootstrap toggler bar style override */
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2303468d' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* ========== LOADING SCREEN ========== */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:linear-gradient(to bottom, #680000, #001f3f); /* dark blur effect */
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+.loader-logo img {
+  width: 150px;
+  animation: fadeInOut 2s infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* updated */

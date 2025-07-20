@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Legacy.1899 | FC Barcelona Tribute</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader-logo">
+      <img src="assets/images/pngs/barca.png" alt="FC Barcelona Logo" />
+    </div>
+  </div>
+
+  <!-- ======= HEADER ======= -->
+  <header class="site-header">
+    <div class="header-container container d-flex justify-content-between align-items-center py-3">
+      <div class="logo-title d-flex align-items-center">
+        <img src="assets/images/pngs/barca.png" alt="Barca Logo" class="barca-logo me-2" />
+        <h1 class="site-title m-0">LEGACY.1899</h1>
+      </div>
+
+      <nav class="navbar navbar-expand-md">
+        <button
+          class="navbar-toggler custom-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto nav-animated">
+            <li class="nav-item"><a class="nav-link nav-underline text-warning" href="#hero">Home</a></li>
+            <li class="nav-item"><a class="nav-link nav-underline text-warning" href="#legacy">Legends</a></li>
+            <li class="nav-item"><a class="nav-link nav-underline text-warning" href="#moments">Moments</a></li>
+            <li class="nav-item"><a class="nav-link nav-underline text-warning" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section position-relative fade-in-section" id="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="assets/videos/hero.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-overlay text-center">
+      <h1 class="poster-heading">
+        LEGACY.<span class="text-blue">18</span><span class="text-red">99</span>
+      </h1>
+      <p class="typewriter1">
+        "Més que un <span class="text-blue">club</span> — More than a <span class="text-red">club</span>"
+      </p>
+    </div>
+
+    <div class="hero-fade-bottom"></div>
+  </section>
+
+  
+
+  <!-- Origins Section -->
+  <section class="origins-section py-5" id="origins">
+    <div class="container ">
+      <h2 class="H2-heading text-center mb-4">
+        Origins.<span class="text-blue">18</span><span class="text-red">99</span>
+        </h2>
+
+      <div class="row justify-content-center mt-4">
+        <div class="col-12 col-md-10 col-lg-8 position-relative">
+          <img src="assets/images/pngs/news1.png" alt="Newspaper" class="img-fluid news-frame">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- crest Section -->
+  <section class="slider-section py-5" id='crest'>
+  <div class="container text-center">
+    <h2 class="H2-heading mb-4">
+      The Crest Through <span class="text-blue">time</span>
+    </h2>
+
+    <div class="slider-wrapper">
+      <button class="slider-arrow left" onclick="moveSlide(-1)">&#10094;</button>
+
+      <div class="slider-track" id="sliderTrack">
+        <img src="assets/images/pngs/crest/1900.png" alt="1900 Crest" class="slider-item">
+        <img src="assets/images/pngs/crest/1940.png" alt="1940 Crest" class="slider-item">
+        <img src="assets/images/pngs/crest/1970.png" alt="1970 Crest" class="slider-item">
+        <img src="assets/images/pngs/crest/2002.png" alt="2002 Crest" class="slider-item">
+      </div>
+
+      <button class="slider-arrow right" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+    <div class="slider-dots" id="sliderDots">
+      <!-- JS will fill these -->
+    </div>
+   </div>
+ </section>
+
+ <!-- Legacy Wall Section -->
+ <section class="legacy-wall py-5 " id="legacy">
+  <div class="container text-center">
+    <h2 class="H2-heading mb-4">Legacy Wall – Barça <span class="text-blue">Legends</span></h2>
+
+    <!-- 🖥️ Desktop -->
+    <div class="frame-grid row justify-content-center d-none d-md-flex">
+      <!-- Card 1 -->
+      <div class="col-6 col-md-4 mb-4 frame-card">
+        <div class="frame-wrapper">
+          <img src="assets/images/pngs/frame.png" alt="Frame" class="frame-border" />
+          <img src="assets/images/Players/messi.jpg" alt="Messi" class="player-photo" />
+          <div class="lottie-shine" data-player></div>
+        </div>
+        <div class="caption">Lionel Messi - "La pulga"</div>
+      </div>
+
+      <!-- Repeat for each player -->
+      <div class="col-6 col-md-4 mb-4 frame-card">
+        <div class="frame-wrapper">
+          <img src="assets/images/pngs/frame.png" class="frame-border" />
+          <img src="assets/images/Players/Ronaldinho.jpg" class="player-photo" />
+        </div>
+        <div class="caption">Ronaldinho - "The Wizard"</div>
+      </div>
+
+      <div class="col-6 col-md-4 mb-4 frame-card">
+        <div class="frame-wrapper">
+          <img src="assets/images/pngs/frame.png" class="frame-border" />
+          <img src="assets/images/Players/Xavier Hernández Creus.jpg" class="player-photo" />
+        </div>
+        <div class="caption">Xavi - "The Puppet Master"</div>
+      </div>
+
+      <div class="col-6 col-md-4 mb-4 frame-card">
+        <div class="frame-wrapper">
+          <img src="assets/images/pngs/frame.png" class="frame-border" />
+          <img src="assets/images/Players/neymar.jpg" class="player-photo" />
+        </div>
+        <div class="caption">Neymar - "The Prince"</div>
+      </div>
+
+      <div class="col-6 col-md-4 mb-4 frame-card">
+        <div class="frame-wrapper">
+          <img src="assets/images/pngs/frame.png" class="frame-border" />
+          <img src="assets/images/Players/Iniesta!.jpg" class="player-photo" />
+        </div>
+        <div class="caption">Iniesta - "El Cerebro"</div>
+      </div>
+
+      <div class="col-6 col-md-4 mb-4 frame-card">
+        <div class="frame-wrapper">
+          <img src="assets/images/pngs/frame.png" class="frame-border" />
+          <img src="assets/images/Players/Sergio Busquets.jpg" class="player-photo" />
+        </div>
+        <div class="caption">Busquets - "El Pulpo"</div>
+      </div>
+
+      <div class="col-6 col-md-4 mb-4 frame-card">
+        <div class="frame-wrapper">
+          <img src="assets/images/pngs/frame.png" class="frame-border" />
+          <img src="assets/images/Players/Rivaldo.jpg" class="player-photo" />
+        </div>
+        <div class="caption">Rivaldo - "Rivo"</div>
+      </div>
+
+      <div class="col-6 col-md-4 mb-4 frame-card">
+        <div class="frame-wrapper">
+          <img src="assets/images/pngs/frame.png" class="frame-border" />
+          <img src="assets/images/Players/Johan Cruijff.jpg" class="player-photo" />
+        </div>
+        <div class="caption">Cruyff - "Total Football"</div>
+      </div>
+
+      <div class="col-6 col-md-4 mb-4 frame-card">
+        <div class="frame-wrapper">
+          <img src="assets/images/pngs/frame.png" class="frame-border" />
+          <img src="assets/images/Players/Luis suarez.jpg" class="player-photo" />
+        </div>
+        <div class="caption">Suárez - "El Pistolero"</div>
+      </div>
+      <div class="col-6 col-md-4 mb-4 frame-card">
+        <div class="frame-wrapper">
+          <img src="assets/images/pngs/frame.png" class="frame-border" />
+          <img src="assets/images/Players/Eto'o - Barca.jpg" class="player-photo" />
+        </div>
+        <div class="caption">Eto'o - "Little Milla"</div>
+      </div>
+    </div>
+  </div>
+  <!-- 📱 Mobile view: Slider version -->
+    <div class="mobile-slider d-md-none position-relative">
+      <div id="mobileSlideContainer" class="slide-track">
+        <!-- Slide 1 -->
+        <div class="mobile-slide">
+          <div class="frame-card">
+            <div class="frame-wrapper">
+              <img src="assets/images/pngs/frame.png" class="frame-border" />
+              <img src="assets/images/Players/messi.jpg" class="player-photo" />
+            </div>
+            <div class="caption">Messi - "La Pulga"</div>
+          </div>
+
+          <div class="frame-card">
+            <div class="frame-wrapper">
+              <img src="assets/images/pngs/frame.png" class="frame-border" />
+              <img src="assets/images/Players/Ronaldinho.jpg" class="player-photo" />
+            </div>
+            <div class="caption">Ronaldinho - "The Wizard"</div>
+          </div>
+
+          <div class="frame-card">
+            <div class="frame-wrapper">
+              <img src="assets/images/pngs/frame.png" class="frame-border" />
+              <img src="assets/images/Players/Xavier Hernández Creus.jpg" class="player-photo" />
+            </div>
+            <div class="caption">Xavi - "The Puppet Master"</div>
+          </div>
+
+          <div class="frame-card">
+            <div class="frame-wrapper">
+              <img src="assets/images/pngs/frame.png" class="frame-border" />
+              <img src="assets/images/Players/neymar.jpg" class="player-photo" />
+            </div>
+            <div class="caption">Neymar - "The Prince"</div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="mobile-slide">
+          <div class="frame-card">
+            <div class="frame-wrapper">
+              <img src="assets/images/pngs/frame.png" class="frame-border" />
+              <img src="assets/images/Players/Iniesta!.jpg" class="player-photo" />
+            </div>
+            <div class="caption">Iniesta - "El Cerebro"</div>
+          </div>
+
+          <div class="frame-card">
+            <div class="frame-wrapper">
+              <img src="assets/images/pngs/frame.png" class="frame-border" />
+              <img src="assets/images/Players/Sergio Busquets.jpg" class="player-photo" />
+            </div>
+            <div class="caption">Busquets - "El Pulpo"</div>
+          </div>
+
+          <div class="frame-card">
+            <div class="frame-wrapper">
+              <img src="assets/images/pngs/frame.png" class="frame-border" />
+              <img src="assets/images/Players/Rivaldo.jpg" class="player-photo" />
+            </div>
+            <div class="caption">Rivaldo - "Rivo"</div>
+          </div>
+
+          <div class="frame-card">
+            <div class="frame-wrapper">
+              <img src="assets/images/pngs/frame.png" class="frame-border" />
+              <img src="assets/images/Players/Johan Cruijff.jpg" class="player-photo" />
+            </div>
+            <div class="caption">Cruyff - "Total Football"</div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="mobile-slide">
+          <div class="frame-card">
+            <div class="frame-wrapper">
+              <img src="assets/images/pngs/frame.png" class="frame-border" />
+              <img src="assets/images/Players/Luis suarez.jpg" class="player-photo" />
+            </div>
+            <div class="caption">Suárez - "El Pistolero"</div>
+          </div>
+
+          <div class="frame-card">
+            <div class="frame-wrapper">
+              <img src="assets/images/pngs/frame.png" class="frame-border" />
+              <img src="assets/images/Players/Eto'o - Barca.jpg" class="player-photo" />
+            </div>
+            <div class="caption">Eto'o - "Little Milla"</div>
+          </div>
+        </div>
+      </div>
+      <!-- Arrows -->
+      <button class="nav left" id="mobile-slide-left">&#10094;</button>
+      <button class="nav right" id="mobile-slide-right">&#10095;</button>
+
+      <!-- Pagination Dots -->
+      <div class="dot-nav mt-3" id="dotNav"></div>
+    </div>
+  </div>
+ </section>
+
+
+  <section class="iconic-moments fade-in-section" id="moments">
+    <h2 class="H2-heading">Iconic Moments</h2>
+
+    <div class="moment-slider">
+      <div class="moment-wrapper">
+        <!-- Left PNG Container -->
+        <div class="moment-side moment-left">
+          <img id="characterImage" src="assets/images/pngs/pep.png" alt="Character" class="moment-img moment-character">
+        </div>
+
+        <!-- Center: TV Static Image -->
+        <div class="moment-center">
+          <div class="tv-frame">
+            <img src="assets/images/pngs/old tv.png" alt="Old TV" class="tv-img">
+
+            <!-- Glitch video -->
+            <video id="tvGlitch" class="tv-screen-content glitch" muted preload="auto">
+              <source src="assets/videos/tvglich.mp4" type="video/mp4" />
+            </video>
+
+            <!-- Content inside TV -->
+            <img id="tvContentImage" class="tv-screen-content" src="assets/images/sextuple.jpg" alt="TV Content" />
+            <video id="tvContentVideo" class="tv-screen-content hidden" muted loop autoplay>
+              <source src="assets/videos/messiwalk.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        <!-- Right: Description Text -->
+        <div class="moment-side moment-right">
+          <h3 id="momentHeading" class="moment-heading">Sextuple Glory - 2009</h3>
+          <p id="momentDescription" class="moment-description">
+            In 2009, under Pep Guardiola, FC Barcelona made history by winning all
+            six major trophies in a single year — La Liga, Copa del Rey, UEFA Champions League, Spanish Super Cup, UEFA Super Cup, and FIFA Club World Cup.
+            <br><br>This Sextuple remains one of the most dominant campaigns in football history.
+          </p>
+        </div>
+      </div>
+
+      <!-- Navigation Controls -->
+      <div class="moment-nav">
+        <button id="prevSlide">⟵</button>
+        <div class="moment-dots" id="momentDots"></div>
+        <button id="nextSlide">⟶</button>
+      </div>
+    </div>
+  </section>
+  <!-- ======= FOOTER ======= -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h3>About <span class="highlight">Legacy 1899</span></h3>
+        <p>A digital tribute to FC Barcelona’s golden age — celebrating legendary moments, players, and the spirit of the club.</p>
+      </div>
+
+      <div class="footer-section links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#crest">Crest</a></li>
+          <li><a href="#legacy">Legends</a></li>
+          <li><a href="#moments">Moments</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section connect">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="bi bi-youtube"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Legacy 1899. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+   <script>
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loading-screen");
+      setTimeout(() => {
+        loader.style.opacity = 0;
+        loader.style.pointerEvents = "none";
+        setTimeout(() => loader.style.display = "none", 500); // remove after fade
+      }, 4000); // 4 seconds (you can change this)
+    });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+  <script>
+    document.querySelectorAll('[data-player]').forEach((container) => {
+      const anim = lottie.loadAnimation({
+        container,
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: 'assets/shine.json' // Place in your assets or adjust path accordingly
+      });
+
+      container.parentElement.addEventListener('mouseenter', () => anim.goToAndPlay(0));
+    });
+  </script>
+
+  <script>
+    AOS.init();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
